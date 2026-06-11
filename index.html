@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OR-Action</title>
+  <meta name="description" content="OR-Action: a fine-grained, multi-role action benchmark for operating-room video understanding.">
+  <meta property="og:title" content="OR-Action">
+  <meta property="og:description" content="Multi-role video understanding with fine-grained operating-room actions.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="./assets/figures/method_overview_paper_web.png">
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Castoro&amp;family=Google+Sans:wght@400;500;700&amp;family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/index.css?v=20260521-rulepad3">
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <h1 class="publication-title">OR-Action 💉</h1>
+        <p class="publication-subtitle">Multi-Role Video Understanding with Fine-Grained Actions</p>
+
+        <div class="publication-authors">
+          <span class="author-block"><a href="https://www.cs.cit.tum.de/camp/members/felix-tristram/" target="_blank" rel="noopener">Felix Tristram</a><sup>1,2</sup>,</span>
+          <span class="author-block"><a href="https://www.cs.cit.tum.de/en/camp/members/ege-oezsoy/" target="_blank" rel="noopener">Ege Özsoy</a><sup>1,2</sup>,</span>
+          <span class="author-block">Christian Benz<sup>3</sup>,</span>
+          <span class="author-block">Marcel Walch<sup>3</sup>,</span>
+          <span class="author-block">Ghazal Ghazaei<sup>3,*</sup>,</span>
+          <span class="author-block"><a href="https://www.cs.cit.tum.de/en/camp/members/cv-nassir-navab/nassir-navab/" target="_blank" rel="noopener">Nassir Navab</a><sup>1,2,*</sup></span>
+        </div>
+
+        <div class="publication-affiliations">
+          <span class="author-block"><sup>1</sup>Technical University of Munich</span>
+          <span class="author-block"><sup>2</sup>Munich Center for Machine Learning (MCML)</span>
+          <span class="author-block"><sup>3</sup>Carl Zeiss AG</span>
+        </div>
+
+        <div class="publication-venue">
+          <span>MICCAI 2026 Early Accept</span>
+          <span class="advisor-note"><sup>*</sup>Equal advising</span>
+        </div>
+
+        <div class="publication-links" aria-label="Project links">
+          <a class="button is-dark" href="./assets/paper/or-action.pdf" target="_blank" rel="noopener">
+            <span class="button-icon">PDF</span>
+            <span>Paper</span>
+          </a>
+          <a class="button is-dark" href="https://github.com/FelTris/or_action" target="_blank" rel="noopener">
+            <span class="button-icon">GitHub</span>
+            <span>Code</span>
+          </a>
+          <a class="button is-dark" href="https://github.com/FelTris/or_action/tree/main/data" target="_blank" rel="noopener">
+            <span class="button-icon">Data</span>
+            <span>Benchmark</span>
+          </a>
+          <a class="button is-dark" href="#citation">
+            <span class="button-icon">BibTeX</span>
+            <span>Citation</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section teaser-section" aria-labelledby="teaser-title">
+      <div class="container is-wide">
+        <h2 id="teaser-title" class="visually-hidden">OR-Action video</h2>
+        <div class="video-stage">
+          <video autoplay muted loop playsinline controls preload="auto" poster="./assets/video/posters/4727_suppl_video.jpg" aria-label="OR-Action supplementary video">
+            <source src="./assets/video/4727_suppl_video.web.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="abstract">
+      <div class="container">
+        <h2 class="section-title">Abstract</h2>
+        <div class="content abstract-content">
+          <p>
+            Fine-grained understanding of operating room activity could enable workflow-aware assistance, yet remains difficult due to clutter, occlusions, limited sensing, and the need to model multiple clinicians over time. OR scene graphs provide an interpretable representation of interactions, but converting frame-wise relational predictions into temporally extended actions is challenging without explicit temporal modeling.
+          </p>
+          <p>
+            We introduce OR-Action, the first action-centric benchmark built on a publicly available ego-exocentric OR dataset. OR-Action defines a fine-grained, multi-role action taxonomy and generates dense action segments from ground-truth scene graph state changes. Experiments show that current scene-graph prediction methods struggle to recover temporal structure, even with graph neural networks. We therefore introduce a vision-only temporal model that outperforms graph-based methods using all available egocentric video, and a multi- to single-view feature alignment strategy that improves single-view multi-role action recognition.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section takeaways-section" id="key-takeaways">
+      <div class="container is-wide">
+        <h2 class="section-title">Key Takeaways</h2>
+        <ul class="takeaways-list">
+          <li>
+            <span class="takeaway-mark"></span>
+            <span>OR-Action provides dense, role-specific temporal action labels for external operating-room video.</span>
+          </li>
+          <li>
+            <span class="takeaway-mark"></span>
+            <span>Rule-based scene-graph distillation converts relational state changes into 78 fine-grained action classes.</span>
+          </li>
+          <li>
+            <span class="takeaway-mark"></span>
+            <span>Vision-only V-JEPA2 temporal modeling substantially outperforms graph-based pipelines on segmental F1.</span>
+          </li>
+          <li>
+            <span class="takeaway-mark"></span>
+            <span>Multi-view teacher representations can improve single-view multi-role action recognition through feature alignment.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section figure-section" id="benchmark">
+      <div class="container is-wide">
+        <h2 class="section-title">OR-Action Benchmark</h2>
+        <div class="benchmark-rule-split" aria-label="Graph rule-base examples">
+          <figure class="benchmark-rule-card">
+            <img src="./assets/figures/rule_needle_cropped_small.png?v=20260521-rulepad3" alt="Graph rule-base example for needle placement verification.">
+          </figure>
+          <figure class="benchmark-rule-card benchmark-rule-card-compact">
+            <img src="./assets/figures/rule_handover_cropped_small.png?v=20260521-rulepad3" alt="Graph rule-base example for operating-room handover actions.">
+          </figure>
+        </div>
+
+        <div class="stat-grid" aria-label="Benchmark statistics">
+          <div class="stat-item">
+            <span class="stat-value">78</span>
+            <span class="stat-label">action classes</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">1,295</span>
+            <span class="stat-label">action segments</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">~100k</span>
+            <span class="stat-label">annotated frames</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">multi-role</span>
+            <span class="stat-label">ego-exocentric video</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section figure-section" id="method">
+      <div class="container is-wide">
+        <h2 class="section-title">Method</h2>
+        <figure class="wide-figure method-figure">
+          <img src="./assets/figures/method_overview_paper_web.png" alt="Overview of rule-based label generation, multi-role action modeling, and teacher-student alignment.">
+          <figcaption>
+            The pipeline combines rule-based label generation, multi-role temporal action recognition, and multi-view to single-view feature alignment.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section results-section" id="results">
+      <div class="container is-wide">
+        <h2 class="section-title">Results</h2>
+        <div class="results-grid">
+          <figure class="results-figure">
+            <img src="./assets/figures/qualitative_timeline_web.png?v=20260521-rulepad3" alt="Qualitative temporal action segmentation comparison.">
+            <figcaption>
+              The vision-only model better preserves action order and segment overlap than graph-based predictions.
+            </figcaption>
+          </figure>
+
+          <div class="results-lower">
+            <div class="table-panel">
+              <h3>Temporal Action Understanding</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Model</th>
+                    <th>Acc</th>
+                    <th>Edit</th>
+                    <th>F1@0.1</th>
+                    <th>F1@0.25</th>
+                    <th>F1@0.5</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="split-row"><td colspan="6">Validation</td></tr>
+                  <tr>
+                    <td>GT + GNN</td>
+                    <td>65.19</td>
+                    <td>48.33</td>
+                    <td>32.08</td>
+                    <td>30.42</td>
+                    <td>25.42</td>
+                  </tr>
+                  <tr>
+                    <td>EgoExOR + rule mapping</td>
+                    <td>16.54</td>
+                    <td>38.24</td>
+                    <td>21.21</td>
+                    <td>16.16</td>
+                    <td>13.13</td>
+                  </tr>
+                  <tr>
+                    <td>EgoExOR + GNN*</td>
+                    <td>52.03</td>
+                    <td>27.60</td>
+                    <td>3.27</td>
+                    <td>2.09</td>
+                    <td>1.23</td>
+                  </tr>
+                  <tr class="best-row">
+                    <td>Ours (all roles)</td>
+                    <td>61.65</td>
+                    <td>38.24</td>
+                    <td>39.90</td>
+                    <td>35.47</td>
+                    <td>25.12</td>
+                  </tr>
+                  <tr class="split-row"><td colspan="6">Test</td></tr>
+                  <tr>
+                    <td>GT + GNN</td>
+                    <td>69.54</td>
+                    <td>48.63</td>
+                    <td>39.34</td>
+                    <td>36.53</td>
+                    <td>29.98</td>
+                  </tr>
+                  <tr>
+                    <td>EgoExOR + rule mapping</td>
+                    <td>17.37</td>
+                    <td>38.28</td>
+                    <td>21.59</td>
+                    <td>20.45</td>
+                    <td>18.18</td>
+                  </tr>
+                  <tr>
+                    <td>EgoExOR + GNN*</td>
+                    <td>58.81</td>
+                    <td>35.22</td>
+                    <td>4.87</td>
+                    <td>3.37</td>
+                    <td>2.06</td>
+                  </tr>
+                  <tr class="best-row">
+                    <td>Ours (all roles)</td>
+                    <td>67.50</td>
+                    <td>45.47</td>
+                    <td>40.64</td>
+                    <td>37.88</td>
+                    <td>29.10</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="table-footnote">
+                *We re-ran selected baselines before benchmark publication and updated these rows. The main change is non-idle frame accuracy; temporal segment metrics remain in the same range, preserving the paper's overall conclusions.
+              </p>
+            </div>
+
+            <aside class="results-note" aria-label="Condensed results discussion">
+              <h3>Discussion</h3>
+              <p>
+                Predicted scene graphs remain a weak basis for dense temporal actions: direct rule mapping is brittle, and the learned GNN baseline still produces jittery, incoherent segments.
+              </p>
+              <p>
+                Ground-truth scene graphs are much stronger, showing that relational structure can represent the task when annotations are reliable. The vision-only model closes most of this gap and gives the best segmental F1 on test, especially for short handover events.
+              </p>
+              <p>
+                The main remaining failure mode is semantic ambiguity between visually similar actions, such as microscope positioning and procedure checking.
+              </p>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="citation">
+      <div class="container">
+        <h2 class="section-title">Citation</h2>
+        <pre class="citation-block"><code>@inproceedings{oraction2026,
+  title     = {OR-Action: Multi-Role Video Understanding with Fine-Grained Actions},
+  author    = {Tristram, Felix and Özsoy, Ege and Benz, Christian and Walch, Marcel and Ghazaei, Ghazal and Navab, Nassir},
+  booktitle = {MICCAI},
+  year      = {2026}
+}</code></pre>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
