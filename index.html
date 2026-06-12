@@ -253,22 +253,9 @@
                 </tbody>
               </table>
               <p class="table-footnote">
-                *We re-ran selected baselines before benchmark publication and updated these rows. The main change is non-idle frame accuracy; temporal segment metrics remain in the same range, preserving the paper's overall conclusions.
+                *We re-ran selected baselines before benchmark publication and updated these rows. The main change is non-idle frame accuracy; temporal segment metrics remain in the same range, preserving the paper's overall conclusion: scene graph prediction struggles to represent temporal behavior.
               </p>
             </div>
-
-            <aside class="results-note" aria-label="Condensed results discussion">
-              <h3>Discussion</h3>
-              <p>
-                Predicted scene graphs remain a weak basis for dense temporal actions: direct rule mapping is brittle, and the learned GNN baseline still produces jittery, incoherent segments.
-              </p>
-              <p>
-                Ground-truth scene graphs are much stronger, showing that relational structure can represent the task when annotations are reliable. The vision-only model closes most of this gap and gives the best segmental F1 on test, especially for short handover events.
-              </p>
-              <p>
-                The main remaining failure mode is semantic ambiguity between visually similar actions, such as microscope positioning and procedure checking.
-              </p>
-            </aside>
           </div>
         </div>
       </div>

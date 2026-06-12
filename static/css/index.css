@@ -371,43 +371,25 @@ figcaption {
 }
 
 .results-lower {
-  display: grid;
-  grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.55fr);
-  gap: 16px;
-  align-items: stretch;
+  width: min(100%, 980px);
+  margin: 0 auto;
 }
 
 .table-panel {
+  width: 100%;
+  margin: 0 auto;
   overflow-x: auto;
 }
 
-.table-panel h3,
-.results-note h3 {
+.table-panel h3 {
   margin: 2px 0 12px;
   font-family: "Google Sans", "Noto Sans", Arial, sans-serif;
   font-size: 1.25rem;
 }
 
-.results-note {
-  padding: 16px 18px;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  background: #fff;
-}
-
-.results-note p {
-  margin: 0 0 12px;
-  color: var(--muted);
-  font-size: 0.95rem;
-  line-height: 1.48;
-}
-
-.results-note p:last-child {
-  margin-bottom: 0;
-}
-
 table {
   width: 100%;
+  min-width: 720px;
   border-collapse: collapse;
   font-size: 0.91rem;
   white-space: nowrap;
@@ -477,7 +459,6 @@ thead th {
 
 @media (max-width: 900px) {
   .takeaways-list,
-  .results-lower,
   .results-grid,
   .stat-grid {
     grid-template-columns: 1fr;
